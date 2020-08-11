@@ -1,7 +1,31 @@
 {
-  "name": "easy-mode-template",
+  "name": "cra-template-basic-website",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "author": "Jesse Kämäräinen <jessekamarainen@hotmail.com>",
+  "main": "template.json",
+  "description": "A starter setup for a basic website powered by redux, react-router and bootstrap.",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "cra-template",
+    "template",
+    "redux",
+    "react-router",
+    "bootstrap"
+  ],
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeespu/cra-template-basic-website",
+    "directory": "/"
+  },
+  "bugs": {
+    "url": "https://github.com/jeespu/cra-template-basic-website/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -21,7 +45,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean-files": "rm -rf ./template/public ./template/src && rm -f ./template/.eslintrc",
+    "copy-files": "cp -a ./src/. template/src && cp -a ./public/. template/public && cp .eslintrc template/",
+    "prepublishOnly": "yarn clean-files && yarn copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
