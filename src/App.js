@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Container from './components/container/container'
+import { ROUTE_HOME } from './constants/routes'
+import HomePage from './pages/home/home'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+
+   const auth = true // In case we need conditional rendering depending on auth state
+
+   return (
+      <Container auth={auth}>
+         <Switch>
+            <Route path={ROUTE_HOME} component={HomePage} />
+         </Switch>
+      </Container>
+   )
 }
 
-export default App;
+export default App
